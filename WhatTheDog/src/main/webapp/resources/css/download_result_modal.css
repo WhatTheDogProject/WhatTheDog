@@ -1,0 +1,415 @@
+@charset "UTF-8";
+#okBtn{
+	display: none;
+}
+#notCorrect{
+	cursor:pointer;
+}
+#notCorRe{
+	
+	word-break: keep-all; /* 텍스트 줄바꿈 제어 */
+    white-space: normal;
+    display: none;
+}
+#notCorBox{
+	width: 250px;
+    top: 50%; /* 화면 중앙에서 50% 위치 */
+	left: 50%; /* 화면 중앙에서 50% 위치 */
+	transform: translate(-50%, -50%);
+    margin: 0 auto;
+    padding:20px;
+    text-align: center;
+    height: 150px;
+    background-image:   url('/resources/image/main/dog_drw(f).png');
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    background-position:  bottom right;/* 이미지의 중앙 배치 */
+    background-size: 15%;
+    
+    background-color: rgb(253, 210, 255);
+    position: absolute; /* 고정 위치로 설정하여 스크롤 시에도 모달이 유지됨 */
+    z-index: 9999; /* 모달을 맨 앞으로 가져옴 */
+   
+    display: none;
+	
+}
+#dog_kor_name{
+	width: 180px;
+   
+    margin: 1% 0% 1% 0%;
+    border: none;
+    background-color: rgb(255, 196, 255);
+    border-radius: 10px;
+    height: 8%;
+    text-align: center;
+    font-size: 1rem;
+    padding-top:5px;
+}
+#notCorBtn{
+	
+	background-color: rgba(255, 152, 255, 0.568);
+    border-radius: 30px;
+    border: 2px solid rgba(0, 0, 0, 0.432);
+    
+    margin: 1px 0% 1px 0%;
+    text-align: center;
+    width:100px;
+    height:30px;
+    margin-left:57px;
+    
+}
+.result_dog_img{
+    width: 230px;
+    height: 230px;
+    border: 4px solid rgba(105, 90, 205, 0.404);
+    border-radius: 30px;
+    margin: 0% 1% 0% 1%;
+}
+
+/* 배경 블러 처리용 오버레이 */
+.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 검은색 배경 */
+    backdrop-filter: blur(3px); /* 블러 처리 */
+    z-index: 999; /* 모달 바로 뒤에 오도록 설정 */
+    display: none; /* 모달이 열릴 때 보이도록 설정 */
+    
+}
+
+
+.result_img_download{
+    width: 75%;
+    top: 50%; /* 화면 중앙에서 50% 위치 */
+	left: 50%; /* 화면 중앙에서 50% 위치 */
+	transform: translate(-50%, -50%);
+    margin: 0 auto;
+    text-align: center;
+    height: 55%;
+    background-image:  url('/resources/image/main/logo(f).png'), url('/resources/image/main/dog_drw(f).png');
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    background-position: top left, bottom right;/* 이미지의 중앙 배치 */
+    background-size: 10%;
+    
+    background-color: rgb(253, 210, 255);
+    position: absolute; /* 고정 위치로 설정하여 스크롤 시에도 모달이 유지됨 */
+    z-index: 9999; /* 모달을 맨 앞으로 가져옴 */
+    display: none;
+}
+.result_img_text{
+    border: 4px solid rgba(105, 90, 205, 0.404);
+    width: 64%;
+    margin-left: 20%;
+    border-radius: 30px;
+    text-align: center;
+    font-weight: bold;
+
+    
+}
+
+
+.down_title{
+    margin: 10px auto;
+}
+.jua-regular {
+    font-family: "Jua", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+.dog_icon{
+    width: 30px;
+    display: inline-block; /* 텍스트와 이미지를 같은 줄에 배치 */
+    vertical-align: middle; /* 이미지의 중간에 텍스트 위치 */
+}
+.dog_input{
+    width: 50%;
+   
+    margin: 1% 0% 1% 0%;
+    border: none;
+    background-color: rgb(255, 196, 255);
+    border-radius: 10px;
+    height: 8%;
+    text-align: center;
+    font-size: 1.1rem;
+    padding-top:5px;
+    
+}
+
+.dog_input:focus{
+    outline: none;
+    background-color: rgba(127, 255, 212, 0.445);
+}
+
+
+
+.download_f{
+    position: relative;
+    top: 1%;
+    left: 37%;
+    cursor: pointer;
+    width: 30%;
+    text-align: center;
+    background-color: rgba(255, 152, 255, 0.568);
+    border-radius: 30px;
+    border: 2px solid rgba(0, 0, 0, 0.432);
+    float: center;
+    margin: 1px 0% 1px 0%;
+    text-align: center;
+    display: none;
+    align-items: center;
+}
+.icon3{
+    width: 15px;
+    margin-right: 3%;
+}
+#download_img_modal .label_size{
+	width: 70px;
+}
+#download_img_modal{
+	position: absolute;
+}
+.close{
+    position: absolute;
+    top: 18%;
+    left:89%;
+    cursor: pointer;
+    width: 20px;
+    text-align: center;
+    background-color: rgba(238, 153, 238, 0.568);
+    border-radius: 30px;
+    border: 2px solid rgba(0, 0, 0, 0.432);
+    display: none;
+    
+    z-index: 9999; /* 모달을 맨 앞으로 가져옴 */
+}
+@media (max-width: 670px){
+	.dog_input{
+    width: 50%;
+   
+    margin: 1% 0% 1% 0%;
+    border: none;
+    background-color: rgb(255, 196, 255);
+    border-radius: 10px;
+    height: 8%;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 34px;
+    
+}
+	.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 검은색 배경 */
+    backdrop-filter: blur(3px); /* 블러 처리 */
+    z-index: 9998; /* 모달 바로 뒤에 오도록 설정 */
+    display: none; /* 모달이 열릴 때 보이도록 설정 */
+    
+	}
+	.result_dog_img{
+    width: 200px;
+    height: 200px;
+    border: 4px solid rgba(105, 90, 205, 0.404);
+    border-radius: 30px;
+    margin: 0% 1% 0% 1%;
+	}
+	.result_img_download{
+    width: 90%;
+    top: 50%; /* 화면 중앙에서 50% 위치 */
+	left: 50%; /* 화면 중앙에서 50% 위치 */
+	transform: translate(-50%, -50%);
+    margin: 0 auto;
+    text-align: center;
+    height: 50%;
+    background-image:  url('/resources/image/main/logo(f).png'), url('/resources/image/main/dog_drw(f).png');
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    background-position: top left, bottom right;/* 이미지의 중앙 배치 */
+    background-size: 10%;
+    
+    background-color: rgb(253, 210, 255);
+    position: absolute; /* 고정 위치로 설정하여 스크롤 시에도 모달이 유지됨 */
+    z-index: 9999; /* 모달을 맨 앞으로 가져옴 */
+    display: none;
+	}
+	.close{
+    position: absolute;
+    top: 20%;
+    left:96%;
+    cursor: pointer;
+    width: 20px;
+    text-align: center;
+    background-color: rgba(238, 153, 238, 0.568);
+    border-radius: 30px;
+    border: 2px solid rgba(0, 0, 0, 0.432);
+    display: none;
+    
+    z-index: 9999;
+	}
+	.download_f{
+    position: relative;
+    top:2%;
+    left: 32%;
+    cursor: pointer;
+    width: 35%;
+    text-align: center;
+    background-color: rgba(255, 152, 255, 0.568);
+    border-radius: 30px;
+    border: 2px solid rgba(0, 0, 0, 0.432);
+    float: center;
+    margin: 1px 0% 1px 0%;
+    text-align: center;
+    display: none;
+    align-items: center;
+	}
+	
+	
+}
+@media (max-width: 485px){
+	.close{
+    position: absolute;
+    top: 30%;
+    left:89%;
+    cursor: pointer;
+    width: 20px;
+    text-align: center;
+    background-color: rgba(238, 153, 238, 0.568);
+    border-radius: 30px;
+    border: 2px solid rgba(0, 0, 0, 0.432);
+    display: none;
+    
+    z-index: 9999; /* 모달을 맨 앞으로 가져옴 */
+}
+	.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 검은색 배경 */
+    backdrop-filter: blur(3px); /* 블러 처리 */
+    z-index: 9998; /* 모달 바로 뒤에 오도록 설정 */
+    display: none; /* 모달이 열릴 때 보이도록 설정 */
+    
+	}
+	.result_dog_img{
+    width: 150px;
+    height: 150px;
+    border: 4px solid rgba(105, 90, 205, 0.404);
+    border-radius: 30px;
+    margin: 0% 0% 0% 0%;
+	}
+	.result_img_download{
+    width: 90%;
+    top: 50%; /* 화면 중앙에서 50% 위치 */
+	left: 50%; /* 화면 중앙에서 50% 위치 */
+	transform: translate(-50%, -50%);
+    margin: 0 auto;
+    text-align: center;
+    height: 41%;
+    background-image:  url('/resources/image/main/logo(f).png'), url('/resources/image/main/dog_drw(f).png');
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    background-position: top left, bottom right;/* 이미지의 중앙 배치 */
+    background-size: 10%;
+    
+    background-color: rgb(253, 210, 255);
+    position: absolute; /* 고정 위치로 설정하여 스크롤 시에도 모달이 유지됨 */
+    z-index: 9999; /* 모달을 맨 앞으로 가져옴 */
+    display: none;
+	}
+	
+	.download_f{
+    position: relative;
+    top:2%;
+    left: 32%;
+    cursor: pointer;
+    width: 40%;
+    text-align: center;
+    background-color: rgba(255, 152, 255, 0.568);
+    border-radius: 30px;
+    border: 2px solid rgba(0, 0, 0, 0.432);
+    float: center;
+    margin: 1px 0% 1px 0%;
+    text-align: center;
+    display: none;
+    align-items: center;
+	}
+	
+	
+}
+@media (max-width: 370px){
+	.close{
+    position: absolute;
+    top: 32%;
+    left:88%;
+    cursor: pointer;
+    width: 20px;
+    text-align: center;
+    background-color: rgba(238, 153, 238, 0.568);
+    border-radius: 30px;
+    border: 2px solid rgba(0, 0, 0, 0.432);
+    display: none;
+    
+    z-index: 9999; /* 모달을 맨 앞으로 가져옴 */
+}
+	.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 검은색 배경 */
+    backdrop-filter: blur(3px); /* 블러 처리 */
+    z-index: 9998; /* 모달 바로 뒤에 오도록 설정 */
+    display: none; /* 모달이 열릴 때 보이도록 설정 */
+    
+	}
+	.result_dog_img{
+    width: 120px;
+    height: 120px;
+    border: 4px solid rgba(105, 90, 205, 0.404);
+    border-radius: 30px;
+    margin: 0% 0% 0% 0%;
+	}
+	.result_img_download{
+    width: 90%;
+    top: 50%; /* 화면 중앙에서 50% 위치 */
+	left: 50%; /* 화면 중앙에서 50% 위치 */
+	transform: translate(-50%, -50%);
+    margin: 0 auto;
+    text-align: center;
+    height: 42%;
+    background-image:  url('/resources/image/main/logo(f).png'), url('/resources/image/main/dog_drw(f).png');
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    background-position: top left, bottom right;/* 이미지의 중앙 배치 */
+    background-size: 10%;
+    
+    background-color: rgb(253, 210, 255);
+    position: absolute; /* 고정 위치로 설정하여 스크롤 시에도 모달이 유지됨 */
+    z-index: 9999; /* 모달을 맨 앞으로 가져옴 */
+    display: none;
+	}
+	
+	.download_f{
+    position: relative;
+    top:2%;
+    left: 32%;
+    cursor: pointer;
+    width: 40%;
+    text-align: center;
+    background-color: rgba(255, 152, 255, 0.568);
+    border-radius: 30px;
+    border: 2px solid rgba(0, 0, 0, 0.432);
+    float: center;
+    margin: 1px 0% 1px 0%;
+    text-align: center;
+    display: none;
+    align-items: center;
+	}
+	
+	
+}

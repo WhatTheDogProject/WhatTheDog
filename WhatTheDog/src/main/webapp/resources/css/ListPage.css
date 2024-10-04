@@ -1,0 +1,250 @@
+*{
+    box-sizing: border-box;
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.jua-regular{
+    font-family: "Jua", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#con{
+    width: 84%;
+    height: 1000px;
+}
+
+#sidemenu{
+    width: 100%;
+    height: 270px;
+    /*border-top: 2px solid rgb(200, 155, 214);*/
+    
+   
+    
+}
+#main{
+    width: 100%;
+    height: 700px;
+    border: 2px solid violet;
+    border-radius: 15px;
+    
+}
+
+
+
+#list{
+    width: 100%;
+    text-align: center;
+    float: left;
+    font-size: 0.9rem;
+    height: 240px;
+    padding: 7px;
+    padding-left: 0px;
+    background: #faebfc;
+    
+    
+    
+    
+}
+#list th{
+    width: 4%;
+    padding-right: 5px;
+}
+#list td{
+    width: 40%;
+    text-align: left;
+    /* word-spacing: 20px; */
+    
+    
+}
+#list td a{
+    border-left: solid rgb(177, 177, 177) 1px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: -5px;
+    color: black;
+    text-decoration: none;
+    font-size: 0.8rem;
+    
+}
+#list td a:hover{
+    background-color: rgb(134, 126, 172);
+    color: white;
+    border-radius: 25px;
+    
+}
+#list ul{
+    list-style-type: none;
+    
+}
+#list li{
+    display: inline-block;
+}
+#catetable{
+    width: 78%;
+    margin-top: 5px;
+    font-size: 1.0rem;
+    
+}
+#catetable th{
+    width: 80px;
+    height: 55px;
+    border-bottom: 1px solid rgb(177, 177, 177);
+    word-break: keep-all; /* 텍스트 줄바꿈 제어 */
+    white-space: normal;
+}
+#catetable td{
+    width: 320px;
+    height: 55px;
+    border-bottom: 1px solid rgb(177, 177, 177);
+    word-break: keep-all; /* 텍스트 줄바꿈 제어 */
+    white-space: normal;
+}
+
+#dog_comment{
+    width: 77.6%;
+    max-height: 10%;
+    border-bottom: 1px solid rgb(177, 177, 177);
+    font-size:1.0rem;
+    padding:15px;
+    word-break:keep-all;
+    overflow-y: auto;
+}
+
+#dec{
+    width: 380px;
+    border-bottom: 1px solid rgb(177, 177, 177);
+    height: 50%;
+    text-align: center;
+}
+
+#dog_image{
+   width:100%; 
+   padding-left: 10px;
+   
+   
+}
+#dog_image_td{
+   
+   text-align: center;
+}
+
+@media screen and (max-width: 760px){
+   #list{
+   	padding:0;
+   	height:98%;
+   	margin-bottom: 10px;
+   }
+   #list td a{
+       padding-left: 10px;
+       padding-right: 10px;
+    }
+    #dog_comment{
+       width: 85%;
+       max-height: 200px;
+       border-bottom: 1px solid rgb(177, 177, 177);
+       font-size:1rem;
+       padding:20px;
+       word-break:keep-all;
+       
+       overflow-y: auto;
+   }
+   #tdBox{
+		width: 100%;
+		height: 200px;
+		 word-break:keep-all;
+		 overflow: auto;
+	}
+   #catetable{
+      margin: 10px;
+      width: 95%;
+   }
+   #catetable th{
+  		word-break: keep-all; /* 텍스트 줄바꿈 제어 */
+        white-space: normal; /* 텍스트 줄바꿈을 자연스럽게 */
+   }
+}
+
+@media screen and (max-width: 582px){
+   #list{
+   	padding:0;
+   	height:98%;
+   	margin-bottom: 10px;
+   }
+   #list td a{
+       padding-left: 10px;
+       padding-right: 10px;
+    }
+    #dog_comment{
+       width: 85%;
+       max-height: 200px;
+       border-bottom: 1px solid rgb(177, 177, 177);
+       font-size:0.9rem;
+       padding:20px;
+       word-break:keep-all;
+       overflow: auto;
+   }
+   #tdBox{
+		width: 100%;
+		height: 150px;
+		 word-break:keep-all;
+		 overflow: auto;
+	}
+   #catetable{
+      margin: 10px;
+      width: 95%;
+      font-size:0.8rem;
+   }
+   #catetable th{
+  		word-break: keep-all; /* 텍스트 줄바꿈 제어 */
+        white-space: normal; /* 텍스트 줄바꿈을 자연스럽게 */
+   }
+}
+
+@media screen and (max-width: 395px){
+   
+   
+   #con{
+      width: 100%
+   }
+   #list{
+   	
+   	padding: 0;
+   	margin-bottom: 10px;
+   }
+   #list td a{
+       padding-left: 10px;
+       padding-right: 10px;
+       font-size: 0.6rem;
+    }
+    #dog_comment{
+    	
+       width: 100%;
+       height: 150px;
+       border-bottom: 1px solid rgb(177, 177, 177);
+       font-size:0.9rem;
+       padding:20px;
+      
+      
+   }
+	#tdBox{
+		width: 100%;
+		height: 150px;
+		 word-break:keep-all;
+		 overflow: auto;
+	}
+   
+   #catetable{
+      margin:0;
+      width: 100%;
+      font-size:0.9rem;
+   }
+   #dog_image{
+      width: 80%;
+   }
+   #catetable th{
+  		word-break: keep-all; /* 텍스트 줄바꿈 제어 */
+        white-space: normal; /* 텍스트 줄바꿈을 자연스럽게 */
+   }
+}

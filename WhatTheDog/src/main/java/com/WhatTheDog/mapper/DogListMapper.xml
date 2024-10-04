@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.WhatTheDog.mapper.DogListMapper">
+	<select id="getDogList">
+		select DOGLIST_NUM, DOG_KOR_NAME, DOG_EN_NAME, DOG_SIZE, DOG_OUTFIT
+		, DOG_PERSONALITY, DOG_REC, DOG_DIS, DOG_COLOR, DOG_COMMENT
+		from DOG_LIST
+		WHERE DOG_EN_NAME= 'Grey_Hound'
+	</select>
+		
+		
+	<select id="getOneDog">
+		select DOGLIST_NUM, DOG_KOR_NAME, DOG_EN_NAME, DOG_SIZE, DOG_OUTFIT
+		, DOG_PERSONALITY, DOG_REC, DOG_DIS, DOG_COLOR, DOG_COMMENT
+		from DOG_LIST
+		WHERE DOG_EN_NAME = #{dog_en_name}
+	</select>
+
+
+	<select id="getMapReg1">
+		SELECT *
+	    FROM culture
+	    WHERE ctgry_three_nm = #{ctgry_three_nm}
+	    AND ctprvn_nm = #{ctprvn_nm}
+	    order by SIGNGU_NM
+	</select>
+	
+	
+	<select id="getMapReg2">
+		SELECT *
+	    FROM culture
+	    WHERE ctgry_three_nm = #{ctgry_three_nm}
+	    AND ctprvn_nm = #{ctprvn_nm}
+	    AND signgu_nm = #{signgu_nm}
+	    order by SIGNGU_NM, legaldong_nm
+	</select>
+	
+	
+	<select id="getMap">
+		SELECT *
+	    FROM culture
+	    WHERE ctgry_three_nm = #{ctgry_three_nm}
+	    AND ctprvn_nm = #{ctprvn_nm}
+	    AND signgu_nm = #{signgu_nm}
+	    AND legaldong_nm =#{legaldong_nm}
+	    order by signgu_nm, legaldong_nm
+	</select>
+	
+	
+	<insert id="insertNotCor">
+		INSERT INTO NOTCORRECT (FILENAME, DOG_KOR_NAME, UPLOADE) 
+		VALUES (#{sfile_name}, #{dog_kor_name}, SYSDATE)
+	</insert>
+
+</mapper>
+  
+  

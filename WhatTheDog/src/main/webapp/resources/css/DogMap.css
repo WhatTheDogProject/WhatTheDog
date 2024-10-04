@@ -1,0 +1,262 @@
+@charset "UTF-8";
+.wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
+.wrap * {padding: 0;margin: 0;}
+.wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
+.wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
+.info .title {padding: 5px 0 0 10px;height: 30px;background: #eee;border-bottom: 1px solid #ddd;font-size: 18px;font-weight: bold;}
+.info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
+.info .close:hover {cursor: pointer;}
+.info .body {position: relative;overflow: hidden;}
+.info .desc {position: relative;margin: 5px 10px;height: 75px;}
+.desc .ellipsis {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;font-size: 14px;margin-top: -4px}
+.desc .loadName:hover {cursor:pointer;}
+.desc .small {font-size: 11px;color: #888;margin-top: -2px; text-align:left;}
+.desc .NumName:hover {cursor:pointer;}
+.desc .jibun {font-size: 11px;color: #888;margin-top: 0px; text-align:right;}
+.info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
+.info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+.info .link {color: #5085BB;}
+
+.yeon-sung-regular {
+font-family: "Yeon Sung", system-ui;
+font-weight: 400;
+font-style: normal;
+}
+
+.container{
+    margin: 0px auto;
+    clear:both;
+    
+}
+.map_body{
+   width: 84%;
+   height:650px;
+   text-align: center;
+   position:relative;
+}
+.btn_location1{
+   	float:right;
+   	margin: 0px 5px 5px 5px;
+   	width: 100px;
+}
+
+.btn_location2{
+   	float:right;
+   	margin: 5px 5px 5px 5px;
+   	width: 100px;
+   	display: none;
+}
+
+.clear_select{
+    float:right;
+    margin: 5px 5px 5px 5px;
+    width: 100px;
+}
+
+.checkbox{
+	clear:both;
+    display: inline-block;     
+    text-align: left;
+    width: 24%;
+    height: 200px;
+    border: 2px solid violet;
+    border-radius: 10px;
+    overflow-y: auto; /* 세로 스크롤만 표시 */
+    overflow-x: hidden; /* 가로 스크롤 숨김 */
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.checkbox_group{
+    padding-left:2%;
+    display: grid;
+   	grid-template-columns: repeat(1, 1fr);
+    gap: 5px; /* 체크박스 사이에 간격 */
+    font-size: 1.2rem;
+    text-align: left;
+   
+}
+
+.checkbox_group label{
+	display: block; /* 레이블을 블록 요소로 설정 */
+	text-align: left; /* 레이블의 텍스트를 왼쪽으로 정렬 */
+	margin: 0
+}
+
+
+.map{
+	position: relative;
+    margin-top: 0.5%;
+    border: 2px solid violet;
+    width: 100%;
+    height: 650px;
+    border-radius: 10px;
+    
+    
+}
+.checkbox::-webkit-scrollbar-track{
+    background-color: #f3e6f7;
+    border-radius: 30px
+}
+
+.checkbox::-webkit-scrollbar-thumb{
+    background-color: violet;
+    border-radius: 30px
+}
+
+.checkbox::-webkit-scrollbar-button{
+    display: none;
+}
+
+.checkbox::-webkit-scrollbar{
+    width: 10px;
+}
+
+/* h3 고정 */
+.checkbox h3 {
+    position: sticky; /* 고정 설정 */
+    top: 0; /* 스크롤 영역의 위쪽에 고정 */
+    background-color: #f3e6f7;
+    z-index: 1; /* 다른 요소 위에 표시되도록 설정 */
+}
+fieldset{
+	border: none;
+}
+#menu_box{
+	position: absolute;
+	z-index: 55;
+	width: 100%;
+	
+	
+}
+#search_bar{
+	  
+  padding: 0px 5px;
+}
+#search_bar > .checkbox:nth-child(2), #search_bar > .checkbox:nth-child(3){
+  	 white-space: nowrap;
+   }
+@media screen and (max-width: 320px){
+   div .checkbox{
+      width: 100%;
+      height: 100px;
+      margin: 0;
+      
+   }
+   div .btn_location1, div .btn_location2, div .clear_select{
+       margin-left: 50%;
+       margin-top: 0.5%;
+       width: 100px;
+   }
+   .checkbox::-webkit-scrollbar{
+       width: 18px;
+   }
+   .checkbox_group{
+      grid-template-columns: repeat(2, 1fr);
+   }
+}
+
+@media screen and (max-width: 461px){
+	#search_bar{
+	  position: relative;
+	  padding: 0px 5px;
+	}
+   div .checkbox{
+      width: 100%;
+      height: 100px;
+      margin:0 ;
+      display: inline-block;
+      position: relative;
+   }
+   #menu_box .btn_location1{
+      margin: 0px 5px 5px 5px;
+      float: right;
+      width: 100px;
+   }
+   #clear_select,  #menu_box .btn_location2{
+      margin: 5px 5px 5px 5px;
+      float: right;
+      width: 100px;
+      
+   }
+   
+   .checkbox::-webkit-scrollbar{
+       width: 18px;
+   }
+   .checkbox_group{
+      grid-template-columns: repeat(2, 1fr);
+   }
+   #search_bar > .checkbox:nth-child(2), #search_bar > .checkbox:nth-child(3){
+  	 white-space: nowrap;
+   }
+}
+
+@media screen and (max-width: 580px){
+	#search_bar{
+	  position: relative;
+	  padding: 0px 5px;
+	}
+   .checkbox{
+      width: 45%;
+      height: 100px;
+      margin: 0;
+   }
+   #menu_box .btn_location1{
+      margin: 0px 5px 5px 5px;
+      float: right;
+      width: 100px;
+   }
+   #clear_select{
+      margin: 5px 5px 5px 5px;
+      float: right;
+      width: 100px;
+      
+   }
+   #menu_box .btn_location2{
+      margin: 5px 5px 5px 5px;
+      float: right;
+      width: 100px;
+      
+   }
+   
+      .checkbox::-webkit-scrollbar{
+       width: 18px;
+   }
+   .checkbox_group{
+      grid-template-columns: repeat(1, 1fr);
+   }
+}
+@media screen and (max-width: 856px){
+   #search_bar{
+	  position: relative;
+	  padding: 0px 5px;
+	}
+   div .checkbox{
+      width: 49%;
+      height: 100px;
+      
+   }
+   #menu_box .btn_location1{
+      margin: 0px 5px 5px 5px;
+      float: right;
+      width: 100px;
+   }
+   #clear_select{
+      margin: 5px 5px 5px 5px;
+      float: right;
+      width: 100px;
+      
+   }
+   #menu_box .btn_location2{
+      margin: 5px 5px 5px 5px;
+      float: right;
+      width: 100px;
+      
+   }
+   
+   .checkbox::-webkit-scrollbar{
+       width: 20px;
+   }
+   .checkbox_group{
+      grid-template-columns: repeat(2, 1fr);
+   }
+}

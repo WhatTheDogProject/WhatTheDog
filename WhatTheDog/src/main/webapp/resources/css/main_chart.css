@@ -1,0 +1,214 @@
+@charset "UTF-8";
+.donut_chart{
+    position: relative;
+    padding: 0% 1% 3% 1%;
+}
+.cen{
+	text-align: center;
+}
+.re_button:hover{
+    background-color: #ff80c2;
+}
+.donut_container{
+    display: flex;
+    gap : 10px;
+    margin-top: 5px;
+}
+
+/* 큰원 */
+.chart{
+   	position: relative;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    transition: 0.3s; /*스타일이 변경될때 지정된 시간동안 부드럽게 전환되는 것*/
+
+}
+
+/*작은원*/
+span.dog_center{
+    /*display: block;*/
+    /*두개의 원이 겹치도록*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    z-index:99;
+    
+}
+
+.font{
+    color: white; /* 글자 내부 색상 */
+    -webkit-text-stroke: 1.1px black; /* 글자 외곽선 두께와 색상 */
+    font-size: 48px; /* 글자 크기 (원하는 크기로 변경 가능) */
+    font-weight: bold; /* 글자 두께 */
+    /* text-shadow: 2px 2px 1px black; 그림자 효과로 좀 더 입체적인 느낌 추가 */
+    line-height: 170px;
+    font-size: 17px;
+    /*가운데 위치*/
+}
+
+.dog1{
+    background-image: url(../image/main/181956647.jpg);
+    background-size: cover;/* 화면에 꽉 차게 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    background-position: center; /* 이미지의 중앙 배치 */
+}
+
+.dog2{
+    background-image: url(/resources/image/main/도베.jpg);
+    background-size: cover;/* 화면에 꽉 차게 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    background-position: center; /* 이미지의 중앙 배치 */
+}
+.dog3{
+    background-image: url(/resources/image/main/리트.jpg);
+    background-size: cover;/* 화면에 꽉 차게 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    background-position: center; /* 이미지의 중앙 배치 */
+}
+.dog4{
+    background-image: url(/resources/image/main/시츄.png);
+    background-size: cover;/* 화면에 꽉 차게 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    background-position: center; /* 이미지의 중앙 배치 */
+}
+
+.dog5{
+    background-image: url(/resources/image/main/퍼그.jpg);
+    background-size: cover;/* 화면에 꽉 차게 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    background-position: center; /* 이미지의 중앙 배치 */
+}
+
+
+/*리플레이*/
+.re_button{
+    width: 150px;
+    height: 30px;
+    font-size:1.0rem;
+    position:absolute;
+    left: 0px;
+    right: 0px;
+    margin: 0px auto;
+    border-radius: 30px;
+    background-color: rgba(255, 141, 226, 0.767);
+    color: rgb(44, 42, 42);
+    border: none; /* 테두리(border)를 없앰 */
+    outline: none; /* 포커스 시 외곽선(outline) 없앰 */
+}
+
+@media (max-width: 461px){
+	#main_sh{
+    
+    height: 84%;
+   
+	}
+	.donut_chart{
+	width:100%;
+    position: relative;
+    padding: 0% 1% 4% 1%;
+	}
+	.donut_container{
+	width:100%;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    gap : 10px;
+    margin-top: 5px;
+	}
+	.chart{
+   	position: relative;
+    width: 98px;
+    height: 98px;
+    text-align:center;
+    border-radius: 50%;
+    transition: 0.3s; /*스타일이 변경될때 지정된 시간동안 부드럽게 전환되는 것*/
+	}
+}
+@media (max-width: 637px){
+	#main_sh{
+    
+    height: 100%;
+   
+	}
+	.donut_chart{
+	width:100%;
+    position: relative;
+    padding: 0% 1% 1% 1%;
+	}
+	.donut_container{
+	width:100%;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    gap : 20px;
+    margin-top: 5px;
+	}
+	.chart{
+   	position: relative;
+    width: 150px;
+    height: 150px;
+    text-align:center;
+    border-radius: 50%;
+    transition: 0.3s; /*스타일이 변경될때 지정된 시간동안 부드럽게 전환되는 것*/
+	}
+    .font{
+    color: white; /* 글자 내부 색상 */
+    -webkit-text-stroke: 1.1px black; /* 글자 외곽선 두께와 색상 */
+    font-size: 48px; /* 글자 크기 (원하는 크기로 변경 가능) */
+    font-weight: bold; /* 글자 두께 */
+    /* text-shadow: 2px 2px 1px black; 그림자 효과로 좀 더 입체적인 느낌 추가 */
+    line-height: 160px;
+    font-size: 17px;
+	}
+	.re_button{
+   	margin: 20px auto; /* 포커스 시 외곽선(outline) 없앰 */
+}
+}
+/*화면의 크기가 670px 이하일 때 */
+@media (max-width: 768px){
+	#result_main .donut_chart{
+    position: relative;
+    padding-left:0;
+    padding-right:0;
+    padding-bottom: 7%;
+	}
+	.donut_container{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    gap : 5px;
+    margin-top: 5px;
+    
+}
+	.chart{
+   	position: relative;
+    width: 120px;
+    height: 120px;
+    margin-left:0px;
+    margin-right:0px;
+    border-radius: 50%;
+    transition: 0.3s; /*스타일이 변경될때 지정된 시간동안 부드럽게 전환되는 것*/
+	}
+    .font{
+    color: white; /* 글자 내부 색상 */
+    -webkit-text-stroke: 1.1px black; /* 글자 외곽선 두께와 색상 */
+    font-size: 48px; /* 글자 크기 (원하는 크기로 변경 가능) */
+    font-weight: bold; /* 글자 두께 */
+    /* text-shadow: 2px 2px 1px black; 그림자 효과로 좀 더 입체적인 느낌 추가 */
+    line-height: 160px;
+    font-size: 17px;
+    /*가운데 위치*/
+	}
+	.re_button{
+   	margin: 10px auto;
+
+	}
+   
+   
+} 
